@@ -1,0 +1,24 @@
+﻿@model TuProyecto.Models.Mensaje
+
+@{
+    ViewBag.Title = "Crear Mensaje";
+}
+
+<h2>Crear Mensaje</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Contenido)
+        @Html.TextAreaFor(model => model.Contenido, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+}

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TuProyecto.Models.Mensaje>
+
+@{
+    ViewBag.Title = "Mensajes";
+}
+
+<h2>Mensajes</h2>
+
+@if (Model.Any())
+{
+    <ul>
+        @foreach (var mensaje in Model)
+        {
+            <li>
+                <strong>@mensaje.Nombre</strong> - @mensaje.FechaPublicacion
+                <p>@mensaje.Contenido</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay mensajes.</p>
+}
